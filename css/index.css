@@ -1,0 +1,172 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  -webkit-border-radius: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+}
+
+main {
+  display: flex;
+  width: 50vw;
+}
+
+.add {
+  display: flex;
+  width: 100%;
+}
+
+button, input, .wordBox {
+  margin: 0.5em;
+}
+
+button, input {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 0;
+  padding: 1em;
+}
+
+input {
+  height: 3rem;
+  width: 50%;
+  outline:none;
+  box-sizing: border-box;
+  padding-left: 0.8em;
+}
+
+.buttonBar {
+  min-width: 50%;
+  max-width: 50%;
+  display: flex;
+}
+
+#add {
+  height: 3rem;
+  width: 99%;
+}
+
+#delete, #nightMode {
+  min-height: 3rem;
+  min-width: 3rem;
+}
+
+svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: none;
+}
+
+.wordBox {
+  min-height: 10rem;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+li, ol {
+  border: none;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  list-style-type: none;
+  margin: 0.3em;
+}
+
+.longWord::after {
+  -webkit-border-radius: 10px;
+	content: attr(data-tooltip); /* Главная часть кода, определяющая содержимое всплывающей подсказки */
+	margin-top: -4px;
+  margin-left: 10px;
+	opacity: 0; /* Наш элемент прозрачен... */
+	padding: 3px 7px;
+	position: absolute;
+	visibility: hidden; /* ...и скрыт. */
+
+	max-width: 10em;
+  overflow-wrap: break-word;
+
+	transition: all 0.4s ease-in-out; /* Добавить плавности по вкусу */
+}
+		
+.longWord:hover::after {
+	opacity: 1; /* Показываем его */
+	visibility: visible;
+}
+
+/* --- NightMode --- */
+* {
+  color: #D0D0D0;
+  background: #35363A;
+}
+
+svg, path {
+  fill: #D0D0D0;
+}
+
+li, ol, button, input, .wordBox {
+  background: #202124;
+}
+
+button:hover, input:hover {
+  background: #28292d;
+}
+
+button:active {
+  background: #303136;
+}
+
+.longWord::after {
+	background: #35363A;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color: #D0D0D0;
+}
+
+/* --- Media --- */
+
+@media (min-width: 320px) and (max-width: 768px) {
+  header, main {
+    width: 100vw;
+  }
+
+  .add, main {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #add {
+    margin-left: 0em;
+  }
+
+  #nightMode {
+    margin-right: 0em;
+  }
+}
+
+@media (min-width: 768.1px) and (max-width: 1024px) {
+  header, main {
+    width: 70vw;
+  }
+}
+
