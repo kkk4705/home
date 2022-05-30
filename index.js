@@ -106,7 +106,7 @@ butNightMode.addEventListener('click', () => {
   } else {
     const addCSS = document.createElement('link')
     addCSS.setAttribute('rel', 'stylesheet')
-    addCSS.setAttribute('href', '/css/nightMode.css')
+    addCSS.setAttribute('href', 'css/nightMode.css')
     addCSS.setAttribute('class', 'nightModeLink')
     document.head.appendChild(addCSS)
   }
